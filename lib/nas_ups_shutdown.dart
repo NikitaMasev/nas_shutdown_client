@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:dartssh2/dartssh2.dart';
 import 'package:nas_shutdown_client/internal/runnable.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:socket_server/services/iot_services/data_notifyer/iot_streamer.dart';
+import 'package:socket_server/services/iot_services/data_notifyer/iot_channel_provider.dart';
 
 const _lowVoltage = 9.1;
 

@@ -1,15 +1,16 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:nas_shutdown_client/models/communicator_sign.dart';
 import 'package:nas_shutdown_client/models/control_data.dart';
 
 part 'client.g.dart';
 
 @JsonSerializable()
-class Client {
+class Client extends CommunicatorSign {
   Client({
     this.id,
     this.name,
     this.controlData,
-  });
+  }) : super(sign: Sign.client);
 
   final int? id;
   final String? name;

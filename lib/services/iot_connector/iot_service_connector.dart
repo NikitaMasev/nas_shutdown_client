@@ -1,10 +1,10 @@
 import 'package:nas_shutdown_client/internal/runnable.dart';
-import 'package:nas_shutdown_client/models/iot_device.dart';
-import 'package:nas_shutdown_client/services/iot_streamer.dart';
+import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-class IotServiceConnector implements Runnable, IotStreamer {
+class IotServiceConnector implements Runnable, IotChannelProvider {
   IotServiceConnector({
     required final this.ip,
     required final this.port,
@@ -21,8 +21,8 @@ class IotServiceConnector implements Runnable, IotStreamer {
   }
 
   @override
-  Stream<List<IotDevice>> getPipeIot() {
-    // TODO: implement getPipeIot
-    throw UnimplementedError();
-  }
+  void sinkRawData(final String data) => _channel.sink.add(data);
+
+  @override
+  Stream<String> watchRawChannel() => _channel.stream.whereType<String>();
 }
