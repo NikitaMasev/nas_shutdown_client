@@ -16,10 +16,6 @@ abstract class AuthEvent with _$AuthEvent {
   const factory AuthEvent.innerClientUpdate(
     final Client client,
   ) = InnerClientUpdate;
-
-  const factory AuthEvent.innerIotDevicesUpdate(
-    final IotDevicesDataWrapper iotDevicesDataWrapper,
-  ) = InnerIotDevicesUpdate;
 }
 
 @freezed
@@ -46,11 +42,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           client,
           emit,
         ),
-        innerIotDevicesUpdate: (final iotDevicesDataWrapper) =>
-            _innerIotDevicesUpdate(
-          iotDevicesDataWrapper,
-          emit,
-        ),
       ),
     );
   }
@@ -59,7 +50,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IotCommunicatorService iotCommunicatorService;
   final String name;
   late final StreamSubscription _subClient;
-  late final StreamSubscription _subIotDevices;
 
   Future<void> _start(
     final Emitter<AuthState> emit,
@@ -67,7 +57,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(const AuthState.loading());
 
     _subscribeClient();
-    _subscribeIotDevices();
 
     final client = await userRepository.getClient();
 
@@ -89,7 +78,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       return;
     }
 
-    if (client.id != null) {
+    ///auth process success
+    if (client.id != null && client.name != null) {
+      emit(const AuthState.success());
+    } else if (client.id != null) {
+      ///register process success
       final fullClient = Client(id: client.id, name: name);
 
       await userRepository.saveClient(fullClient);
@@ -99,14 +92,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  ///If we got [iotDevicesDataWrapper] - auth process success
-  Future<void> _innerIotDevicesUpdate(
-    final IotDevicesDataWrapper iotDevicesDataWrapper,
-    final Emitter<AuthState> emit,
-  ) async {
-    emit(const AuthState.success());
-  }
-
   void _subscribeClient() =>
       _subClient = iotCommunicatorService.watchClientModel().listen(
             (final client) => add(
@@ -114,17 +99,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             ),
           );
 
-  void _subscribeIotDevices() =>
-      _subClient = iotCommunicatorService.watchIotDevicesModel().listen(
-            (final iotDevices) => add(
-              AuthEvent.innerIotDevicesUpdate(iotDevices),
-            ),
-          );
-
   @override
   Future<void> close() async {
     await _subClient.cancel();
-    await _subIotDevices.cancel();
     return super.close();
   }
 }

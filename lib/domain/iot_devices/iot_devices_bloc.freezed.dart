@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'auth_bloc.dart';
+part of 'iot_devices_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,123 +15,164 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AuthEvent {
+mixin _$IotDevicesEvent {
+  String get token => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(String token) start,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(String token)? start,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(String token)? start,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
-    required TResult Function(InnerClientUpdate value) innerClientUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
-    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
-    TResult Function(InnerClientUpdate value)? innerClientUpdate,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $IotDevicesEventCopyWith<IotDevicesEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AuthEventCopyWith<$Res> {
-  factory $AuthEventCopyWith(AuthEvent value, $Res Function(AuthEvent) then) =
-      _$AuthEventCopyWithImpl<$Res, AuthEvent>;
+abstract class $IotDevicesEventCopyWith<$Res> {
+  factory $IotDevicesEventCopyWith(
+          IotDevicesEvent value, $Res Function(IotDevicesEvent) then) =
+      _$IotDevicesEventCopyWithImpl<$Res, IotDevicesEvent>;
+  @useResult
+  $Res call({String token});
 }
 
 /// @nodoc
-class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
-    implements $AuthEventCopyWith<$Res> {
-  _$AuthEventCopyWithImpl(this._value, this._then);
+class _$IotDevicesEventCopyWithImpl<$Res, $Val extends IotDevicesEvent>
+    implements $IotDevicesEventCopyWith<$Res> {
+  _$IotDevicesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? token = null,
+  }) {
+    return _then(_value.copyWith(
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$StartCopyWith<$Res> {
+abstract class _$$StartCopyWith<$Res>
+    implements $IotDevicesEventCopyWith<$Res> {
   factory _$$StartCopyWith(_$Start value, $Res Function(_$Start) then) =
       __$$StartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String token});
 }
 
 /// @nodoc
-class __$$StartCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res, _$Start>
+class __$$StartCopyWithImpl<$Res>
+    extends _$IotDevicesEventCopyWithImpl<$Res, _$Start>
     implements _$$StartCopyWith<$Res> {
   __$$StartCopyWithImpl(_$Start _value, $Res Function(_$Start) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? token = null,
+  }) {
+    return _then(_$Start(
+      null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Start implements Start {
-  const _$Start();
+  const _$Start(this.token);
+
+  @override
+  final String token;
 
   @override
   String toString() {
-    return 'AuthEvent.start()';
+    return 'IotDevicesEvent.start(token: $token)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Start);
+        (other.runtimeType == runtimeType &&
+            other is _$Start &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, token);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StartCopyWith<_$Start> get copyWith =>
+      __$$StartCopyWithImpl<_$Start>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(String token) start,
   }) {
-    return start();
+    return start(token);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(String token)? start,
   }) {
-    return start?.call();
+    return start?.call(token);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(String token)? start,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start();
+      return start(token);
     }
     return orElse();
   }
@@ -140,7 +181,6 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
-    required TResult Function(InnerClientUpdate value) innerClientUpdate,
   }) {
     return start(this);
   }
@@ -149,7 +189,6 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
-    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
   }) {
     return start?.call(this);
   }
@@ -158,7 +197,6 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
-    TResult Function(InnerClientUpdate value)? innerClientUpdate,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -168,150 +206,23 @@ class _$Start implements Start {
   }
 }
 
-abstract class Start implements AuthEvent {
-  const factory Start() = _$Start;
-}
-
-/// @nodoc
-abstract class _$$InnerClientUpdateCopyWith<$Res> {
-  factory _$$InnerClientUpdateCopyWith(
-          _$InnerClientUpdate value, $Res Function(_$InnerClientUpdate) then) =
-      __$$InnerClientUpdateCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Client client});
-}
-
-/// @nodoc
-class __$$InnerClientUpdateCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$InnerClientUpdate>
-    implements _$$InnerClientUpdateCopyWith<$Res> {
-  __$$InnerClientUpdateCopyWithImpl(
-      _$InnerClientUpdate _value, $Res Function(_$InnerClientUpdate) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? client = null,
-  }) {
-    return _then(_$InnerClientUpdate(
-      null == client
-          ? _value.client
-          : client // ignore: cast_nullable_to_non_nullable
-              as Client,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$InnerClientUpdate implements InnerClientUpdate {
-  const _$InnerClientUpdate(this.client);
+abstract class Start implements IotDevicesEvent {
+  const factory Start(final String token) = _$Start;
 
   @override
-  final Client client;
-
+  String get token;
   @override
-  String toString() {
-    return 'AuthEvent.innerClientUpdate(client: $client)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InnerClientUpdate &&
-            (identical(other.client, client) || other.client == client));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, client);
-
   @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InnerClientUpdateCopyWith<_$InnerClientUpdate> get copyWith =>
-      __$$InnerClientUpdateCopyWithImpl<_$InnerClientUpdate>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function(Client client) innerClientUpdate,
-  }) {
-    return innerClientUpdate(client);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function(Client client)? innerClientUpdate,
-  }) {
-    return innerClientUpdate?.call(client);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function(Client client)? innerClientUpdate,
-    required TResult orElse(),
-  }) {
-    if (innerClientUpdate != null) {
-      return innerClientUpdate(client);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Start value) start,
-    required TResult Function(InnerClientUpdate value) innerClientUpdate,
-  }) {
-    return innerClientUpdate(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Start value)? start,
-    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
-  }) {
-    return innerClientUpdate?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Start value)? start,
-    TResult Function(InnerClientUpdate value)? innerClientUpdate,
-    required TResult orElse(),
-  }) {
-    if (innerClientUpdate != null) {
-      return innerClientUpdate(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InnerClientUpdate implements AuthEvent {
-  const factory InnerClientUpdate(final Client client) = _$InnerClientUpdate;
-
-  Client get client;
-  @JsonKey(ignore: true)
-  _$$InnerClientUpdateCopyWith<_$InnerClientUpdate> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$StartCopyWith<_$Start> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$AuthState {
+mixin _$IotDevicesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String data) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -319,7 +230,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function(String data)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -327,7 +238,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -360,15 +271,16 @@ mixin _$AuthState {
 }
 
 /// @nodoc
-abstract class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res, AuthState>;
+abstract class $IotDevicesStateCopyWith<$Res> {
+  factory $IotDevicesStateCopyWith(
+          IotDevicesState value, $Res Function(IotDevicesState) then) =
+      _$IotDevicesStateCopyWithImpl<$Res, IotDevicesState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
-    implements $AuthStateCopyWith<$Res> {
-  _$AuthStateCopyWithImpl(this._value, this._then);
+class _$IotDevicesStateCopyWithImpl<$Res, $Val extends IotDevicesState>
+    implements $IotDevicesStateCopyWith<$Res> {
+  _$IotDevicesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -384,7 +296,7 @@ abstract class _$$InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Initial>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$Initial>
     implements _$$InitialCopyWith<$Res> {
   __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
@@ -397,7 +309,7 @@ class _$Initial implements Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial()';
+    return 'IotDevicesState.initial()';
   }
 
   @override
@@ -414,7 +326,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String data) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -425,7 +337,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function(String data)? success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -436,7 +348,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -484,7 +396,7 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements AuthState {
+abstract class Initial implements IotDevicesState {
   const factory Initial() = _$Initial;
 }
 
@@ -496,7 +408,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Loading>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -509,7 +421,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'AuthState.loading()';
+    return 'IotDevicesState.loading()';
   }
 
   @override
@@ -526,7 +438,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String data) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -537,7 +449,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function(String data)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -548,7 +460,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -596,7 +508,7 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements AuthState {
+abstract class Loading implements IotDevicesState {
   const factory Loading() = _$Loading;
 }
 
@@ -604,44 +516,70 @@ abstract class Loading implements AuthState {
 abstract class _$$SuccessCopyWith<$Res> {
   factory _$$SuccessCopyWith(_$Success value, $Res Function(_$Success) then) =
       __$$SuccessCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
 class __$$SuccessCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Success>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$Success>
     implements _$$SuccessCopyWith<$Res> {
   __$$SuccessCopyWithImpl(_$Success _value, $Res Function(_$Success) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$Success(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Success implements Success {
-  const _$Success();
+  const _$Success(this.data);
+
+  @override
+  final String data;
 
   @override
   String toString() {
-    return 'AuthState.success()';
+    return 'IotDevicesState.success(data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Success);
+        (other.runtimeType == runtimeType &&
+            other is _$Success &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCopyWith<_$Success> get copyWith =>
+      __$$SuccessCopyWithImpl<_$Success>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String data) success,
     required TResult Function(String error) error,
   }) {
-    return success();
+    return success(data);
   }
 
   @override
@@ -649,10 +587,10 @@ class _$Success implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function(String data)? success,
     TResult? Function(String error)? error,
   }) {
-    return success?.call();
+    return success?.call(data);
   }
 
   @override
@@ -660,12 +598,12 @@ class _$Success implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(data);
     }
     return orElse();
   }
@@ -708,8 +646,13 @@ class _$Success implements Success {
   }
 }
 
-abstract class Success implements AuthState {
-  const factory Success() = _$Success;
+abstract class Success implements IotDevicesState {
+  const factory Success(final String data) = _$Success;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$SuccessCopyWith<_$Success> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -721,7 +664,8 @@ abstract class _$$ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$Error>
+class __$$ErrorCopyWithImpl<$Res>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -750,7 +694,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'AuthState.error(error: $error)';
+    return 'IotDevicesState.error(error: $error)';
   }
 
   @override
@@ -775,7 +719,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String data) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -786,7 +730,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function(String data)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -797,7 +741,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String data)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -845,7 +789,7 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements AuthState {
+abstract class Error implements IotDevicesState {
   const factory Error(final String error) = _$Error;
 
   String get error;
