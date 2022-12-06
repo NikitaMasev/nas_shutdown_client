@@ -16,42 +16,53 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$IotDevicesEvent {
-  String get token => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String token) start,
+    required TResult Function() start,
+    required TResult Function(ControlData controlData) controlDevice,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String token)? start,
+    TResult? Function()? start,
+    TResult? Function(ControlData controlData)? controlDevice,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String token)? start,
+    TResult Function()? start,
+    TResult Function(ControlData controlData)? controlDevice,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
+    required TResult Function(ControlDevice value) controlDevice,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
+    TResult? Function(ControlDevice value)? controlDevice,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
+    TResult Function(ControlDevice value)? controlDevice,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $IotDevicesEventCopyWith<IotDevicesEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +71,6 @@ abstract class $IotDevicesEventCopyWith<$Res> {
   factory $IotDevicesEventCopyWith(
           IotDevicesEvent value, $Res Function(IotDevicesEvent) then) =
       _$IotDevicesEventCopyWithImpl<$Res, IotDevicesEvent>;
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -73,29 +82,12 @@ class _$IotDevicesEventCopyWithImpl<$Res, $Val extends IotDevicesEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_value.copyWith(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$StartCopyWith<$Res>
-    implements $IotDevicesEventCopyWith<$Res> {
+abstract class _$$StartCopyWith<$Res> {
   factory _$$StartCopyWith(_$Start value, $Res Function(_$Start) then) =
       __$$StartCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -104,75 +96,60 @@ class __$$StartCopyWithImpl<$Res>
     implements _$$StartCopyWith<$Res> {
   __$$StartCopyWithImpl(_$Start _value, $Res Function(_$Start) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_$Start(
-      null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$Start implements Start {
-  const _$Start(this.token);
-
-  @override
-  final String token;
+  const _$Start();
 
   @override
   String toString() {
-    return 'IotDevicesEvent.start(token: $token)';
+    return 'IotDevicesEvent.start()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Start &&
-            (identical(other.token, token) || other.token == token));
+        (other.runtimeType == runtimeType && other is _$Start);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StartCopyWith<_$Start> get copyWith =>
-      __$$StartCopyWithImpl<_$Start>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String token) start,
+    required TResult Function() start,
+    required TResult Function(ControlData controlData) controlDevice,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
   }) {
-    return start(token);
+    return start();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String token)? start,
+    TResult? Function()? start,
+    TResult? Function(ControlData controlData)? controlDevice,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
   }) {
-    return start?.call(token);
+    return start?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String token)? start,
+    TResult Function()? start,
+    TResult Function(ControlData controlData)? controlDevice,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(token);
+      return start();
     }
     return orElse();
   }
@@ -181,6 +158,9 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
+    required TResult Function(ControlDevice value) controlDevice,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
   }) {
     return start(this);
   }
@@ -189,6 +169,8 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
+    TResult? Function(ControlDevice value)? controlDevice,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
   }) {
     return start?.call(this);
   }
@@ -197,6 +179,8 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
+    TResult Function(ControlDevice value)? controlDevice,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -207,13 +191,298 @@ class _$Start implements Start {
 }
 
 abstract class Start implements IotDevicesEvent {
-  const factory Start(final String token) = _$Start;
+  const factory Start() = _$Start;
+}
+
+/// @nodoc
+abstract class _$$ControlDeviceCopyWith<$Res> {
+  factory _$$ControlDeviceCopyWith(
+          _$ControlDevice value, $Res Function(_$ControlDevice) then) =
+      __$$ControlDeviceCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ControlData controlData});
+}
+
+/// @nodoc
+class __$$ControlDeviceCopyWithImpl<$Res>
+    extends _$IotDevicesEventCopyWithImpl<$Res, _$ControlDevice>
+    implements _$$ControlDeviceCopyWith<$Res> {
+  __$$ControlDeviceCopyWithImpl(
+      _$ControlDevice _value, $Res Function(_$ControlDevice) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? controlData = null,
+  }) {
+    return _then(_$ControlDevice(
+      null == controlData
+          ? _value.controlData
+          : controlData // ignore: cast_nullable_to_non_nullable
+              as ControlData,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ControlDevice implements ControlDevice {
+  const _$ControlDevice(this.controlData);
 
   @override
-  String get token;
+  final ControlData controlData;
+
   @override
+  String toString() {
+    return 'IotDevicesEvent.controlDevice(controlData: $controlData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ControlDevice &&
+            (identical(other.controlData, controlData) ||
+                other.controlData == controlData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, controlData);
+
   @JsonKey(ignore: true)
-  _$$StartCopyWith<_$Start> get copyWith => throw _privateConstructorUsedError;
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ControlDeviceCopyWith<_$ControlDevice> get copyWith =>
+      __$$ControlDeviceCopyWithImpl<_$ControlDevice>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(ControlData controlData) controlDevice,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
+  }) {
+    return controlDevice(controlData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(ControlData controlData)? controlDevice,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+  }) {
+    return controlDevice?.call(controlData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(ControlData controlData)? controlDevice,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (controlDevice != null) {
+      return controlDevice(controlData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(ControlDevice value) controlDevice,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
+  }) {
+    return controlDevice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(ControlDevice value)? controlDevice,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+  }) {
+    return controlDevice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(ControlDevice value)? controlDevice,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (controlDevice != null) {
+      return controlDevice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ControlDevice implements IotDevicesEvent {
+  const factory ControlDevice(final ControlData controlData) = _$ControlDevice;
+
+  ControlData get controlData;
+  @JsonKey(ignore: true)
+  _$$ControlDeviceCopyWith<_$ControlDevice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InnerIotDevicesUpdateCopyWith<$Res> {
+  factory _$$InnerIotDevicesUpdateCopyWith(_$InnerIotDevicesUpdate value,
+          $Res Function(_$InnerIotDevicesUpdate) then) =
+      __$$InnerIotDevicesUpdateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({IotDevicesDataWrapper iotDevicesDataWrapper});
+}
+
+/// @nodoc
+class __$$InnerIotDevicesUpdateCopyWithImpl<$Res>
+    extends _$IotDevicesEventCopyWithImpl<$Res, _$InnerIotDevicesUpdate>
+    implements _$$InnerIotDevicesUpdateCopyWith<$Res> {
+  __$$InnerIotDevicesUpdateCopyWithImpl(_$InnerIotDevicesUpdate _value,
+      $Res Function(_$InnerIotDevicesUpdate) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? iotDevicesDataWrapper = null,
+  }) {
+    return _then(_$InnerIotDevicesUpdate(
+      null == iotDevicesDataWrapper
+          ? _value.iotDevicesDataWrapper
+          : iotDevicesDataWrapper // ignore: cast_nullable_to_non_nullable
+              as IotDevicesDataWrapper,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
+  const _$InnerIotDevicesUpdate(this.iotDevicesDataWrapper);
+
+  @override
+  final IotDevicesDataWrapper iotDevicesDataWrapper;
+
+  @override
+  String toString() {
+    return 'IotDevicesEvent.innerIotDevicesUpdate(iotDevicesDataWrapper: $iotDevicesDataWrapper)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InnerIotDevicesUpdate &&
+            (identical(other.iotDevicesDataWrapper, iotDevicesDataWrapper) ||
+                other.iotDevicesDataWrapper == iotDevicesDataWrapper));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, iotDevicesDataWrapper);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InnerIotDevicesUpdateCopyWith<_$InnerIotDevicesUpdate> get copyWith =>
+      __$$InnerIotDevicesUpdateCopyWithImpl<_$InnerIotDevicesUpdate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(ControlData controlData) controlDevice,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate(iotDevicesDataWrapper);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(ControlData controlData)? controlDevice,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate?.call(iotDevicesDataWrapper);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(ControlData controlData)? controlDevice,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesUpdate != null) {
+      return innerIotDevicesUpdate(iotDevicesDataWrapper);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(ControlDevice value) controlDevice,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(ControlDevice value)? controlDevice,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(ControlDevice value)? controlDevice,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesUpdate != null) {
+      return innerIotDevicesUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InnerIotDevicesUpdate implements IotDevicesEvent {
+  const factory InnerIotDevicesUpdate(
+          final IotDevicesDataWrapper iotDevicesDataWrapper) =
+      _$InnerIotDevicesUpdate;
+
+  IotDevicesDataWrapper get iotDevicesDataWrapper;
+  @JsonKey(ignore: true)
+  _$$InnerIotDevicesUpdateCopyWith<_$InnerIotDevicesUpdate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -222,7 +491,8 @@ mixin _$IotDevicesState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String data) success,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        update,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -230,7 +500,7 @@ mixin _$IotDevicesState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String data)? success,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -238,7 +508,7 @@ mixin _$IotDevicesState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String data)? success,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -247,7 +517,7 @@ mixin _$IotDevicesState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
+    required TResult Function(Update value) update,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -255,7 +525,7 @@ mixin _$IotDevicesState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
+    TResult? Function(Update value)? update,
     TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -263,7 +533,7 @@ mixin _$IotDevicesState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
+    TResult Function(Update value)? update,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
@@ -326,7 +596,8 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String data) success,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        update,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -337,7 +608,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String data)? success,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -348,7 +619,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String data)? success,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -363,7 +634,7 @@ class _$Initial implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
+    required TResult Function(Update value) update,
     required TResult Function(Error value) error,
   }) {
     return initial(this);
@@ -374,7 +645,7 @@ class _$Initial implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
+    TResult? Function(Update value)? update,
     TResult? Function(Error value)? error,
   }) {
     return initial?.call(this);
@@ -385,7 +656,7 @@ class _$Initial implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
+    TResult Function(Update value)? update,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -438,7 +709,8 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String data) success,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        update,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -449,7 +721,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String data)? success,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -460,7 +732,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String data)? success,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -475,7 +747,7 @@ class _$Loading implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
+    required TResult Function(Update value) update,
     required TResult Function(Error value) error,
   }) {
     return loading(this);
@@ -486,7 +758,7 @@ class _$Loading implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
+    TResult? Function(Update value)? update,
     TResult? Function(Error value)? error,
   }) {
     return loading?.call(this);
@@ -497,7 +769,7 @@ class _$Loading implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
+    TResult Function(Update value)? update,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -513,73 +785,75 @@ abstract class Loading implements IotDevicesState {
 }
 
 /// @nodoc
-abstract class _$$SuccessCopyWith<$Res> {
-  factory _$$SuccessCopyWith(_$Success value, $Res Function(_$Success) then) =
-      __$$SuccessCopyWithImpl<$Res>;
+abstract class _$$UpdateCopyWith<$Res> {
+  factory _$$UpdateCopyWith(_$Update value, $Res Function(_$Update) then) =
+      __$$UpdateCopyWithImpl<$Res>;
   @useResult
-  $Res call({String data});
+  $Res call({IotDevicesDataWrapper iotDevicesDataWrapper});
 }
 
 /// @nodoc
-class __$$SuccessCopyWithImpl<$Res>
-    extends _$IotDevicesStateCopyWithImpl<$Res, _$Success>
-    implements _$$SuccessCopyWith<$Res> {
-  __$$SuccessCopyWithImpl(_$Success _value, $Res Function(_$Success) _then)
+class __$$UpdateCopyWithImpl<$Res>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$Update>
+    implements _$$UpdateCopyWith<$Res> {
+  __$$UpdateCopyWithImpl(_$Update _value, $Res Function(_$Update) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? iotDevicesDataWrapper = null,
   }) {
-    return _then(_$Success(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$Update(
+      null == iotDevicesDataWrapper
+          ? _value.iotDevicesDataWrapper
+          : iotDevicesDataWrapper // ignore: cast_nullable_to_non_nullable
+              as IotDevicesDataWrapper,
     ));
   }
 }
 
 /// @nodoc
 
-class _$Success implements Success {
-  const _$Success(this.data);
+class _$Update implements Update {
+  const _$Update(this.iotDevicesDataWrapper);
 
   @override
-  final String data;
+  final IotDevicesDataWrapper iotDevicesDataWrapper;
 
   @override
   String toString() {
-    return 'IotDevicesState.success(data: $data)';
+    return 'IotDevicesState.update(iotDevicesDataWrapper: $iotDevicesDataWrapper)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Success &&
-            (identical(other.data, data) || other.data == data));
+            other is _$Update &&
+            (identical(other.iotDevicesDataWrapper, iotDevicesDataWrapper) ||
+                other.iotDevicesDataWrapper == iotDevicesDataWrapper));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, iotDevicesDataWrapper);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessCopyWith<_$Success> get copyWith =>
-      __$$SuccessCopyWithImpl<_$Success>(this, _$identity);
+  _$$UpdateCopyWith<_$Update> get copyWith =>
+      __$$UpdateCopyWithImpl<_$Update>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String data) success,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        update,
     required TResult Function(String error) error,
   }) {
-    return success(data);
+    return update(iotDevicesDataWrapper);
   }
 
   @override
@@ -587,10 +861,10 @@ class _$Success implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String data)? success,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult? Function(String error)? error,
   }) {
-    return success?.call(data);
+    return update?.call(iotDevicesDataWrapper);
   }
 
   @override
@@ -598,12 +872,12 @@ class _$Success implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String data)? success,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (update != null) {
+      return update(iotDevicesDataWrapper);
     }
     return orElse();
   }
@@ -613,10 +887,10 @@ class _$Success implements Success {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
+    required TResult Function(Update value) update,
     required TResult Function(Error value) error,
   }) {
-    return success(this);
+    return update(this);
   }
 
   @override
@@ -624,10 +898,10 @@ class _$Success implements Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
+    TResult? Function(Update value)? update,
     TResult? Function(Error value)? error,
   }) {
-    return success?.call(this);
+    return update?.call(this);
   }
 
   @override
@@ -635,23 +909,24 @@ class _$Success implements Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
+    TResult Function(Update value)? update,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (update != null) {
+      return update(this);
     }
     return orElse();
   }
 }
 
-abstract class Success implements IotDevicesState {
-  const factory Success(final String data) = _$Success;
+abstract class Update implements IotDevicesState {
+  const factory Update(final IotDevicesDataWrapper iotDevicesDataWrapper) =
+      _$Update;
 
-  String get data;
+  IotDevicesDataWrapper get iotDevicesDataWrapper;
   @JsonKey(ignore: true)
-  _$$SuccessCopyWith<_$Success> get copyWith =>
+  _$$UpdateCopyWith<_$Update> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -719,7 +994,8 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String data) success,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        update,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -730,7 +1006,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String data)? success,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -741,7 +1017,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String data)? success,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -756,7 +1032,7 @@ class _$Error implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
+    required TResult Function(Update value) update,
     required TResult Function(Error value) error,
   }) {
     return error(this);
@@ -767,7 +1043,7 @@ class _$Error implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
+    TResult? Function(Update value)? update,
     TResult? Function(Error value)? error,
   }) {
     return error?.call(this);
@@ -778,7 +1054,7 @@ class _$Error implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
+    TResult Function(Update value)? update,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {

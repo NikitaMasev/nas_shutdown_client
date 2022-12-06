@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:nas_shutdown_client/data/repositories/user_repository.dart';
 import 'package:nas_shutdown_client/models/client.dart';
-import 'package:nas_shutdown_client/models/iot_devices_data_wrapper.dart';
 import 'package:nas_shutdown_client/services/iot_communicator/iot_communicator_service.dart';
 
 part 'auth_bloc.freezed.dart';
