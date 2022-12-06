@@ -19,4 +19,5 @@ Map<String, dynamic> _$CommunicatorSignToJson(CommunicatorSign instance) =>
 const _$SignEnumMap = {
   Sign.client: 'client',
   Sign.iotDevices: 'iotDevices',
+  Sign.unknown: 'unknown',
 };

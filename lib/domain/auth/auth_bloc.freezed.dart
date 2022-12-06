@@ -16,42 +16,53 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AuthEvent {
-  String get name => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) start,
+    required TResult Function() start,
+    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String name)? start,
+    TResult? Function()? start,
+    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? start,
+    TResult Function()? start,
+    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
+    required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
+    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
+    TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AuthEventCopyWith<AuthEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -59,8 +70,6 @@ mixin _$AuthEvent {
 abstract class $AuthEventCopyWith<$Res> {
   factory $AuthEventCopyWith(AuthEvent value, $Res Function(AuthEvent) then) =
       _$AuthEventCopyWithImpl<$Res, AuthEvent>;
-  @useResult
-  $Res call({String name});
 }
 
 /// @nodoc
@@ -72,28 +81,12 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$StartCopyWith<$Res> implements $AuthEventCopyWith<$Res> {
+abstract class _$$StartCopyWith<$Res> {
   factory _$$StartCopyWith(_$Start value, $Res Function(_$Start) then) =
       __$$StartCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name});
 }
 
 /// @nodoc
@@ -101,75 +94,60 @@ class __$$StartCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res, _$Start>
     implements _$$StartCopyWith<$Res> {
   __$$StartCopyWithImpl(_$Start _value, $Res Function(_$Start) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_$Start(
-      null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$Start implements Start {
-  const _$Start(this.name);
-
-  @override
-  final String name;
+  const _$Start();
 
   @override
   String toString() {
-    return 'AuthEvent.start(name: $name)';
+    return 'AuthEvent.start()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Start &&
-            (identical(other.name, name) || other.name == name));
+        (other.runtimeType == runtimeType && other is _$Start);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StartCopyWith<_$Start> get copyWith =>
-      __$$StartCopyWithImpl<_$Start>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) start,
+    required TResult Function() start,
+    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
   }) {
-    return start(name);
+    return start();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String name)? start,
+    TResult? Function()? start,
+    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
   }) {
-    return start?.call(name);
+    return start?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? start,
+    TResult Function()? start,
+    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(name);
+      return start();
     }
     return orElse();
   }
@@ -178,6 +156,9 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
+    required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
   }) {
     return start(this);
   }
@@ -186,6 +167,8 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
+    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
   }) {
     return start?.call(this);
   }
@@ -194,6 +177,8 @@ class _$Start implements Start {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
+    TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -204,13 +189,297 @@ class _$Start implements Start {
 }
 
 abstract class Start implements AuthEvent {
-  const factory Start(final String name) = _$Start;
+  const factory Start() = _$Start;
+}
+
+/// @nodoc
+abstract class _$$InnerClientUpdateCopyWith<$Res> {
+  factory _$$InnerClientUpdateCopyWith(
+          _$InnerClientUpdate value, $Res Function(_$InnerClientUpdate) then) =
+      __$$InnerClientUpdateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Client client});
+}
+
+/// @nodoc
+class __$$InnerClientUpdateCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$InnerClientUpdate>
+    implements _$$InnerClientUpdateCopyWith<$Res> {
+  __$$InnerClientUpdateCopyWithImpl(
+      _$InnerClientUpdate _value, $Res Function(_$InnerClientUpdate) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? client = null,
+  }) {
+    return _then(_$InnerClientUpdate(
+      null == client
+          ? _value.client
+          : client // ignore: cast_nullable_to_non_nullable
+              as Client,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InnerClientUpdate implements InnerClientUpdate {
+  const _$InnerClientUpdate(this.client);
 
   @override
-  String get name;
+  final Client client;
+
   @override
+  String toString() {
+    return 'AuthEvent.innerClientUpdate(client: $client)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InnerClientUpdate &&
+            (identical(other.client, client) || other.client == client));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, client);
+
   @JsonKey(ignore: true)
-  _$$StartCopyWith<_$Start> get copyWith => throw _privateConstructorUsedError;
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InnerClientUpdateCopyWith<_$InnerClientUpdate> get copyWith =>
+      __$$InnerClientUpdateCopyWithImpl<_$InnerClientUpdate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
+  }) {
+    return innerClientUpdate(client);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+  }) {
+    return innerClientUpdate?.call(client);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerClientUpdate != null) {
+      return innerClientUpdate(client);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
+  }) {
+    return innerClientUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+  }) {
+    return innerClientUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerClientUpdate != null) {
+      return innerClientUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InnerClientUpdate implements AuthEvent {
+  const factory InnerClientUpdate(final Client client) = _$InnerClientUpdate;
+
+  Client get client;
+  @JsonKey(ignore: true)
+  _$$InnerClientUpdateCopyWith<_$InnerClientUpdate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InnerIotDevicesUpdateCopyWith<$Res> {
+  factory _$$InnerIotDevicesUpdateCopyWith(_$InnerIotDevicesUpdate value,
+          $Res Function(_$InnerIotDevicesUpdate) then) =
+      __$$InnerIotDevicesUpdateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({IotDevicesDataWrapper iotDevicesDataWrapper});
+}
+
+/// @nodoc
+class __$$InnerIotDevicesUpdateCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$InnerIotDevicesUpdate>
+    implements _$$InnerIotDevicesUpdateCopyWith<$Res> {
+  __$$InnerIotDevicesUpdateCopyWithImpl(_$InnerIotDevicesUpdate _value,
+      $Res Function(_$InnerIotDevicesUpdate) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? iotDevicesDataWrapper = null,
+  }) {
+    return _then(_$InnerIotDevicesUpdate(
+      null == iotDevicesDataWrapper
+          ? _value.iotDevicesDataWrapper
+          : iotDevicesDataWrapper // ignore: cast_nullable_to_non_nullable
+              as IotDevicesDataWrapper,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
+  const _$InnerIotDevicesUpdate(this.iotDevicesDataWrapper);
+
+  @override
+  final IotDevicesDataWrapper iotDevicesDataWrapper;
+
+  @override
+  String toString() {
+    return 'AuthEvent.innerIotDevicesUpdate(iotDevicesDataWrapper: $iotDevicesDataWrapper)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InnerIotDevicesUpdate &&
+            (identical(other.iotDevicesDataWrapper, iotDevicesDataWrapper) ||
+                other.iotDevicesDataWrapper == iotDevicesDataWrapper));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, iotDevicesDataWrapper);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InnerIotDevicesUpdateCopyWith<_$InnerIotDevicesUpdate> get copyWith =>
+      __$$InnerIotDevicesUpdateCopyWithImpl<_$InnerIotDevicesUpdate>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate(iotDevicesDataWrapper);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate?.call(iotDevicesDataWrapper);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesUpdate != null) {
+      return innerIotDevicesUpdate(iotDevicesDataWrapper);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+  }) {
+    return innerIotDevicesUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesUpdate != null) {
+      return innerIotDevicesUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InnerIotDevicesUpdate implements AuthEvent {
+  const factory InnerIotDevicesUpdate(
+          final IotDevicesDataWrapper iotDevicesDataWrapper) =
+      _$InnerIotDevicesUpdate;
+
+  IotDevicesDataWrapper get iotDevicesDataWrapper;
+  @JsonKey(ignore: true)
+  _$$InnerIotDevicesUpdateCopyWith<_$InnerIotDevicesUpdate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
