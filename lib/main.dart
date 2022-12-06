@@ -1,11 +1,16 @@
 import 'dart:async';
 
+import 'package:bloc/bloc.dart';
 import 'package:nas_shutdown_client/di/consumers.dart';
 import 'package:nas_shutdown_client/di/domains.dart';
 import 'package:nas_shutdown_client/di/sources.dart';
 import 'package:nas_shutdown_client/domain/auth/auth_bloc.dart';
+import 'package:nas_shutdown_client/internal/app_bloc_observer.dart';
 
+///TODO retry auth after lost power, connection
 Future<void> main() async {
+  Bloc.observer = AppBlocObserver();
+
   final iotCommunicatorService = await configCommunicator();
   final authBloc = await configAuthBloc(iotCommunicatorService);
 
