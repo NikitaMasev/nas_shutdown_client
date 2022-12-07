@@ -7,7 +7,8 @@ import 'package:nas_shutdown_client/di/sources.dart';
 import 'package:nas_shutdown_client/domain/auth/auth_bloc.dart';
 import 'package:nas_shutdown_client/internal/app_bloc_observer.dart';
 
-///TODO retry auth after lost power, connection
+///TODO retry auth after lost power, connection;
+///TODO try to make other iot_device_data_converter.dart;
 Future<void> main() async {
   Bloc.observer = AppBlocObserver();
 
