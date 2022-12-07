@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:nas_shutdown_client/data/converters/iot_device_data_converter.dart';
 import 'package:nas_shutdown_client/models/type_device.dart';
 
 part 'iot_device.g.dart';
@@ -39,10 +40,13 @@ class IotDevice {
       );
 
   Map<String, dynamic> toJson() => _$IotDeviceToJson(this);
+  factory IotDevice.fromJson(final Map<String, dynamic> json) =>
+      _$IotDeviceFromJson(json);
 
   final int id;
   final TypeDevice typeDevice;
   final String? name;
+  @IotDeviceDataConverter()
   final dynamic data;
 
   bool get isAuthorized => id != -1;

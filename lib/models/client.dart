@@ -10,7 +10,8 @@ class Client extends CommunicatorSign {
     this.id,
     this.name,
     this.controlData,
-  }) : super(sign: Sign.client);
+    final Sign sign = Sign.client,
+  }) : super(sign: sign);
 
   final int? id;
   final String? name;

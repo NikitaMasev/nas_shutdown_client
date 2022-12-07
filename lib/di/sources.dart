@@ -9,7 +9,6 @@ import 'package:nas_shutdown_client/services/iot_communicator/iot_communicator_s
 import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.dart';
 import 'package:nas_shutdown_client/services/iot_connector/iot_service_connector.dart';
 import 'package:nas_shutdown_client/services/iot_connector/iot_service_crypto_connector.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<IotCommunicatorService> configCommunicator() async {
   final iotChannelProvider = await _configChannelProvider();
@@ -21,8 +20,7 @@ Future<IotCommunicatorService> configCommunicator() async {
 }
 
 Future<SharedPersistent> _configSharedPersistent() async {
-  final shared = await SharedPreferences.getInstance();
-  return SharedPersistentImpl(shared);
+  return SharedPersistentImpl();
 }
 
 Future<UserRepository> configUserRepo() async {
@@ -34,7 +32,7 @@ Future<IotChannelProvider> _configChannelProvider() async {
   final iotChannelProvider = IotServiceConnector(
     ip: ipClients,
     port: portClients.toString(),
-  );
+  )..run();
   return IotServiceCryptoConnector(
     iotChannelProvider: iotChannelProvider,
     crypto: cryptoClients,

@@ -6,7 +6,12 @@ part 'iot_devices_data_wrapper.g.dart';
 
 @JsonSerializable()
 class IotDevicesDataWrapper extends CommunicatorSign {
-  IotDevicesDataWrapper(this.devices) : super(sign: Sign.iotDevices);
+  IotDevicesDataWrapper({
+    required final this.devices,
+    final Sign sign = Sign.iotDevices,
+  }) : super(
+          sign: sign,
+        );
 
   final List<IotDevice> devices;
 

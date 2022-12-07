@@ -10,14 +10,15 @@ IotDevice _$IotDeviceFromJson(Map<String, dynamic> json) => IotDevice(
       id: json['id'] as int,
       typeDevice: $enumDecode(_$TypeDeviceEnumMap, json['typeDevice']),
       name: json['name'] as String?,
-      data: json['data'],
+      data: _$JsonConverterFromJson<String, dynamic>(
+          json['data'], const IotDeviceDataConverter().fromJson),
     );
 
 Map<String, dynamic> _$IotDeviceToJson(IotDevice instance) => <String, dynamic>{
       'id': instance.id,
       'typeDevice': _$TypeDeviceEnumMap[instance.typeDevice]!,
       'name': instance.name,
-      'data': instance.data,
+      'data': const IotDeviceDataConverter().toJson(instance.data),
     };
 
 const _$TypeDeviceEnumMap = {
@@ -28,3 +29,9 @@ const _$TypeDeviceEnumMap = {
   TypeDevice.tempSensor: 'tempSensor',
   TypeDevice.unknown: 'unknown',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
