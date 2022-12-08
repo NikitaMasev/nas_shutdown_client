@@ -15,6 +15,10 @@ abstract class AuthEvent with _$AuthEvent {
   const factory AuthEvent.innerClientUpdate(
     final Client client,
   ) = InnerClientUpdate;
+
+  const factory AuthEvent.innerClientError(
+    final Object err,
+  ) = InnerClientError;
 }
 
 @freezed
@@ -25,7 +29,7 @@ abstract class AuthState with _$AuthState {
 
   const factory AuthState.success() = Success;
 
-  const factory AuthState.error(final String error) = Error;
+  const factory AuthState.errorConnection() = ErrorConnection;
 }
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -41,6 +45,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           client,
           emit,
         ),
+        innerClientError: (final err) => _innerClientError(
+          err,
+          emit,
+        ),
       ),
     );
   }
@@ -48,14 +56,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserRepository userRepository;
   final IotCommunicatorService iotCommunicatorService;
   final String name;
-  late final StreamSubscription _subClient;
+  StreamSubscription? _subClient;
 
   Future<void> _start(
     final Emitter<AuthState> emit,
   ) async {
     emit(const AuthState.loading());
 
-    _subscribeClient();
+    await _subscribeClient();
 
     final client = await userRepository.getClient();
 
@@ -68,15 +76,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  Future<void> _innerClientError(
+    final Object err,
+    final Emitter<AuthState> emit,
+  ) async {
+    emit(const AuthState.errorConnection());
+  }
+
   Future<void> _innerClientUpdate(
     final Client client,
     final Emitter<AuthState> emit,
   ) async {
-    if (client.nonValid) {
-      emit(const AuthState.error('client not valid'));
-      return;
-    }
-
     ///auth process success
     if (client.id != null && client.name != null) {
       emit(const AuthState.success());
@@ -91,16 +101,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  void _subscribeClient() =>
-      _subClient = iotCommunicatorService.watchClientModel().listen(
-            (final client) => add(
-              AuthEvent.innerClientUpdate(client),
-            ),
-          );
+  Future<void> _subscribeClient() async {
+    if (_subClient != null) {
+      return;
+    }
+    _subClient = iotCommunicatorService.watchClientModel().listen(
+          (final client) => add(
+            AuthEvent.innerClientUpdate(client),
+          ),
+          onError: (final err) => add(
+            AuthEvent.innerClientError(err as Object),
+          ),
+        );
+  }
 
   @override
   Future<void> close() async {
-    await _subClient.cancel();
+    await _subClient?.cancel();
     return super.close();
   }
 }

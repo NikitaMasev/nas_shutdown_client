@@ -22,6 +22,7 @@ mixin _$IotDevicesEvent {
     required TResult Function(ControlData controlData) controlDevice,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         innerIotDevicesUpdate,
+    required TResult Function(Object err) innerIotDevicesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$IotDevicesEvent {
     TResult? Function(ControlData controlData)? controlDevice,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult? Function(Object err)? innerIotDevicesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$IotDevicesEvent {
     TResult Function(ControlData controlData)? controlDevice,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult Function(Object err)? innerIotDevicesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$IotDevicesEvent {
     required TResult Function(ControlDevice value) controlDevice,
     required TResult Function(InnerIotDevicesUpdate value)
         innerIotDevicesUpdate,
+    required TResult Function(InnerIotDevicesError value) innerIotDevicesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +58,7 @@ mixin _$IotDevicesEvent {
     TResult? Function(Start value)? start,
     TResult? Function(ControlDevice value)? controlDevice,
     TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult? Function(InnerIotDevicesError value)? innerIotDevicesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +66,7 @@ mixin _$IotDevicesEvent {
     TResult Function(Start value)? start,
     TResult Function(ControlDevice value)? controlDevice,
     TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult Function(InnerIotDevicesError value)? innerIotDevicesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +130,7 @@ class _$Start implements Start {
     required TResult Function(ControlData controlData) controlDevice,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         innerIotDevicesUpdate,
+    required TResult Function(Object err) innerIotDevicesError,
   }) {
     return start();
   }
@@ -135,6 +142,7 @@ class _$Start implements Start {
     TResult? Function(ControlData controlData)? controlDevice,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult? Function(Object err)? innerIotDevicesError,
   }) {
     return start?.call();
   }
@@ -146,6 +154,7 @@ class _$Start implements Start {
     TResult Function(ControlData controlData)? controlDevice,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult Function(Object err)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -161,6 +170,7 @@ class _$Start implements Start {
     required TResult Function(ControlDevice value) controlDevice,
     required TResult Function(InnerIotDevicesUpdate value)
         innerIotDevicesUpdate,
+    required TResult Function(InnerIotDevicesError value) innerIotDevicesError,
   }) {
     return start(this);
   }
@@ -171,6 +181,7 @@ class _$Start implements Start {
     TResult? Function(Start value)? start,
     TResult? Function(ControlDevice value)? controlDevice,
     TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult? Function(InnerIotDevicesError value)? innerIotDevicesError,
   }) {
     return start?.call(this);
   }
@@ -181,6 +192,7 @@ class _$Start implements Start {
     TResult Function(Start value)? start,
     TResult Function(ControlDevice value)? controlDevice,
     TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult Function(InnerIotDevicesError value)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -263,6 +275,7 @@ class _$ControlDevice implements ControlDevice {
     required TResult Function(ControlData controlData) controlDevice,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         innerIotDevicesUpdate,
+    required TResult Function(Object err) innerIotDevicesError,
   }) {
     return controlDevice(controlData);
   }
@@ -274,6 +287,7 @@ class _$ControlDevice implements ControlDevice {
     TResult? Function(ControlData controlData)? controlDevice,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult? Function(Object err)? innerIotDevicesError,
   }) {
     return controlDevice?.call(controlData);
   }
@@ -285,6 +299,7 @@ class _$ControlDevice implements ControlDevice {
     TResult Function(ControlData controlData)? controlDevice,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult Function(Object err)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (controlDevice != null) {
@@ -300,6 +315,7 @@ class _$ControlDevice implements ControlDevice {
     required TResult Function(ControlDevice value) controlDevice,
     required TResult Function(InnerIotDevicesUpdate value)
         innerIotDevicesUpdate,
+    required TResult Function(InnerIotDevicesError value) innerIotDevicesError,
   }) {
     return controlDevice(this);
   }
@@ -310,6 +326,7 @@ class _$ControlDevice implements ControlDevice {
     TResult? Function(Start value)? start,
     TResult? Function(ControlDevice value)? controlDevice,
     TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult? Function(InnerIotDevicesError value)? innerIotDevicesError,
   }) {
     return controlDevice?.call(this);
   }
@@ -320,6 +337,7 @@ class _$ControlDevice implements ControlDevice {
     TResult Function(Start value)? start,
     TResult Function(ControlDevice value)? controlDevice,
     TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult Function(InnerIotDevicesError value)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (controlDevice != null) {
@@ -408,6 +426,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     required TResult Function(ControlData controlData) controlDevice,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         innerIotDevicesUpdate,
+    required TResult Function(Object err) innerIotDevicesError,
   }) {
     return innerIotDevicesUpdate(iotDevicesDataWrapper);
   }
@@ -419,6 +438,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     TResult? Function(ControlData controlData)? controlDevice,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult? Function(Object err)? innerIotDevicesError,
   }) {
     return innerIotDevicesUpdate?.call(iotDevicesDataWrapper);
   }
@@ -430,6 +450,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     TResult Function(ControlData controlData)? controlDevice,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
         innerIotDevicesUpdate,
+    TResult Function(Object err)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (innerIotDevicesUpdate != null) {
@@ -445,6 +466,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     required TResult Function(ControlDevice value) controlDevice,
     required TResult Function(InnerIotDevicesUpdate value)
         innerIotDevicesUpdate,
+    required TResult Function(InnerIotDevicesError value) innerIotDevicesError,
   }) {
     return innerIotDevicesUpdate(this);
   }
@@ -455,6 +477,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     TResult? Function(Start value)? start,
     TResult? Function(ControlDevice value)? controlDevice,
     TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult? Function(InnerIotDevicesError value)? innerIotDevicesError,
   }) {
     return innerIotDevicesUpdate?.call(this);
   }
@@ -465,6 +488,7 @@ class _$InnerIotDevicesUpdate implements InnerIotDevicesUpdate {
     TResult Function(Start value)? start,
     TResult Function(ControlDevice value)? controlDevice,
     TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult Function(InnerIotDevicesError value)? innerIotDevicesError,
     required TResult orElse(),
   }) {
     if (innerIotDevicesUpdate != null) {
@@ -486,6 +510,154 @@ abstract class InnerIotDevicesUpdate implements IotDevicesEvent {
 }
 
 /// @nodoc
+abstract class _$$InnerIotDevicesErrorCopyWith<$Res> {
+  factory _$$InnerIotDevicesErrorCopyWith(_$InnerIotDevicesError value,
+          $Res Function(_$InnerIotDevicesError) then) =
+      __$$InnerIotDevicesErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object err});
+}
+
+/// @nodoc
+class __$$InnerIotDevicesErrorCopyWithImpl<$Res>
+    extends _$IotDevicesEventCopyWithImpl<$Res, _$InnerIotDevicesError>
+    implements _$$InnerIotDevicesErrorCopyWith<$Res> {
+  __$$InnerIotDevicesErrorCopyWithImpl(_$InnerIotDevicesError _value,
+      $Res Function(_$InnerIotDevicesError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? err = null,
+  }) {
+    return _then(_$InnerIotDevicesError(
+      null == err ? _value.err : err,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InnerIotDevicesError implements InnerIotDevicesError {
+  const _$InnerIotDevicesError(this.err);
+
+  @override
+  final Object err;
+
+  @override
+  String toString() {
+    return 'IotDevicesEvent.innerIotDevicesError(err: $err)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InnerIotDevicesError &&
+            const DeepCollectionEquality().equals(other.err, err));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(err));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InnerIotDevicesErrorCopyWith<_$InnerIotDevicesError> get copyWith =>
+      __$$InnerIotDevicesErrorCopyWithImpl<_$InnerIotDevicesError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(ControlData controlData) controlDevice,
+    required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
+        innerIotDevicesUpdate,
+    required TResult Function(Object err) innerIotDevicesError,
+  }) {
+    return innerIotDevicesError(err);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(ControlData controlData)? controlDevice,
+    TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    TResult? Function(Object err)? innerIotDevicesError,
+  }) {
+    return innerIotDevicesError?.call(err);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(ControlData controlData)? controlDevice,
+    TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)?
+        innerIotDevicesUpdate,
+    TResult Function(Object err)? innerIotDevicesError,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesError != null) {
+      return innerIotDevicesError(err);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(ControlDevice value) controlDevice,
+    required TResult Function(InnerIotDevicesUpdate value)
+        innerIotDevicesUpdate,
+    required TResult Function(InnerIotDevicesError value) innerIotDevicesError,
+  }) {
+    return innerIotDevicesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(ControlDevice value)? controlDevice,
+    TResult? Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult? Function(InnerIotDevicesError value)? innerIotDevicesError,
+  }) {
+    return innerIotDevicesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(ControlDevice value)? controlDevice,
+    TResult Function(InnerIotDevicesUpdate value)? innerIotDevicesUpdate,
+    TResult Function(InnerIotDevicesError value)? innerIotDevicesError,
+    required TResult orElse(),
+  }) {
+    if (innerIotDevicesError != null) {
+      return innerIotDevicesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InnerIotDevicesError implements IotDevicesEvent {
+  const factory InnerIotDevicesError(final Object err) = _$InnerIotDevicesError;
+
+  Object get err;
+  @JsonKey(ignore: true)
+  _$$InnerIotDevicesErrorCopyWith<_$InnerIotDevicesError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$IotDevicesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -493,7 +665,7 @@ mixin _$IotDevicesState {
     required TResult Function() loading,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         update,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -501,7 +673,7 @@ mixin _$IotDevicesState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -509,7 +681,7 @@ mixin _$IotDevicesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -518,7 +690,7 @@ mixin _$IotDevicesState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Update value) update,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -526,7 +698,7 @@ mixin _$IotDevicesState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Update value)? update,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -534,7 +706,7 @@ mixin _$IotDevicesState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Update value)? update,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -598,7 +770,7 @@ class _$Initial implements Initial {
     required TResult Function() loading,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         update,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return initial();
   }
@@ -609,7 +781,7 @@ class _$Initial implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return initial?.call();
   }
@@ -620,7 +792,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -635,7 +807,7 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Update value) update,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return initial(this);
   }
@@ -646,7 +818,7 @@ class _$Initial implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Update value)? update,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return initial?.call(this);
   }
@@ -657,7 +829,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Update value)? update,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -711,7 +883,7 @@ class _$Loading implements Loading {
     required TResult Function() loading,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         update,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return loading();
   }
@@ -722,7 +894,7 @@ class _$Loading implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return loading?.call();
   }
@@ -733,7 +905,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -748,7 +920,7 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Update value) update,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return loading(this);
   }
@@ -759,7 +931,7 @@ class _$Loading implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Update value)? update,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return loading?.call(this);
   }
@@ -770,7 +942,7 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Update value)? update,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -851,7 +1023,7 @@ class _$Update implements Update {
     required TResult Function() loading,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         update,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return update(iotDevicesDataWrapper);
   }
@@ -862,7 +1034,7 @@ class _$Update implements Update {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return update?.call(iotDevicesDataWrapper);
   }
@@ -873,7 +1045,7 @@ class _$Update implements Update {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -888,7 +1060,7 @@ class _$Update implements Update {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Update value) update,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return update(this);
   }
@@ -899,7 +1071,7 @@ class _$Update implements Update {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Update value)? update,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return update?.call(this);
   }
@@ -910,7 +1082,7 @@ class _$Update implements Update {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Update value)? update,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -931,63 +1103,39 @@ abstract class Update implements IotDevicesState {
 }
 
 /// @nodoc
-abstract class _$$ErrorCopyWith<$Res> {
-  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
-      __$$ErrorCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String error});
+abstract class _$$ErrorConnectionCopyWith<$Res> {
+  factory _$$ErrorConnectionCopyWith(
+          _$ErrorConnection value, $Res Function(_$ErrorConnection) then) =
+      __$$ErrorConnectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res>
-    extends _$IotDevicesStateCopyWithImpl<$Res, _$Error>
-    implements _$$ErrorCopyWith<$Res> {
-  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+class __$$ErrorConnectionCopyWithImpl<$Res>
+    extends _$IotDevicesStateCopyWithImpl<$Res, _$ErrorConnection>
+    implements _$$ErrorConnectionCopyWith<$Res> {
+  __$$ErrorConnectionCopyWithImpl(
+      _$ErrorConnection _value, $Res Function(_$ErrorConnection) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$Error(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$Error implements Error {
-  const _$Error(this.error);
-
-  @override
-  final String error;
+class _$ErrorConnection implements ErrorConnection {
+  const _$ErrorConnection();
 
   @override
   String toString() {
-    return 'IotDevicesState.error(error: $error)';
+    return 'IotDevicesState.errorConnection()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Error &&
-            (identical(other.error, error) || other.error == error));
+        (other.runtimeType == runtimeType && other is _$ErrorConnection);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ErrorCopyWith<_$Error> get copyWith =>
-      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -996,9 +1144,9 @@ class _$Error implements Error {
     required TResult Function() loading,
     required TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)
         update,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
-    return error(this.error);
+    return errorConnection();
   }
 
   @override
@@ -1007,9 +1155,9 @@ class _$Error implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
-    return error?.call(this.error);
+    return errorConnection?.call();
   }
 
   @override
@@ -1018,11 +1166,11 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(IotDevicesDataWrapper iotDevicesDataWrapper)? update,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this.error);
+    if (errorConnection != null) {
+      return errorConnection();
     }
     return orElse();
   }
@@ -1033,9 +1181,9 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Update value) update,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
-    return error(this);
+    return errorConnection(this);
   }
 
   @override
@@ -1044,9 +1192,9 @@ class _$Error implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Update value)? update,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
-    return error?.call(this);
+    return errorConnection?.call(this);
   }
 
   @override
@@ -1055,20 +1203,16 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Update value)? update,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorConnection != null) {
+      return errorConnection(this);
     }
     return orElse();
   }
 }
 
-abstract class Error implements IotDevicesState {
-  const factory Error(final String error) = _$Error;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
+abstract class ErrorConnection implements IotDevicesState {
+  const factory ErrorConnection() = _$ErrorConnection;
 }

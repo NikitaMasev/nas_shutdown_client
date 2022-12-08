@@ -22,12 +22,18 @@ class NasShutDownConsumer implements Runnable {
   final double voltageShutdown;
   final Duration durationDelayShutdown;
 
-  late final StreamSubscription _subBloc;
+  late final StreamSubscription _subBlocUpdateState;
+  late final StreamSubscription _subBlocErrorState;
   Timer? _timerDelayShutdown;
 
   @override
   void run() {
-    _subBloc = iotDevicesBloc.stream
+    _subscribeErrors();
+    _subscribeUpdates();
+  }
+
+  void _subscribeUpdates() {
+    _subBlocUpdateState = iotDevicesBloc.stream
         .where((final state) => state is Update)
         .map(
           (final state) => state.whenOrNull(
@@ -46,7 +52,6 @@ class NasShutDownConsumer implements Runnable {
               voltages.length,
         )
         .listen((final voltageAvg) {
-      print('AVG voltage $voltageAvg');
       if (voltageAvg <= voltageShutdown && _timerDelayShutdown == null) {
         _runTimerDelayShutdown();
         print('LOW voltage $voltageAvg');
@@ -54,6 +59,17 @@ class NasShutDownConsumer implements Runnable {
       }
     });
     iotDevicesBloc.add(const IotDevicesEvent.start());
+  }
+
+  void _subscribeErrors() {
+    _subBlocErrorState = iotDevicesBloc.stream
+        .where((final state) => state is ErrorConnection)
+        .listen(
+          (final state) {
+            _subBlocUpdateState.cancel();
+            _subBlocErrorState.cancel();
+          },
+        );
   }
 
   void _runTimerDelayShutdown() =>

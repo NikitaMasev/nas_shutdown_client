@@ -20,6 +20,10 @@ abstract class IotDevicesEvent with _$IotDevicesEvent {
   const factory IotDevicesEvent.innerIotDevicesUpdate(
     final IotDevicesDataWrapper iotDevicesDataWrapper,
   ) = InnerIotDevicesUpdate;
+
+  const factory IotDevicesEvent.innerIotDevicesError(
+    final Object err,
+  ) = InnerIotDevicesError;
 }
 
 @freezed
@@ -32,7 +36,7 @@ abstract class IotDevicesState with _$IotDevicesState {
     final IotDevicesDataWrapper iotDevicesDataWrapper,
   ) = Update;
 
-  const factory IotDevicesState.error(final String error) = Error;
+  const factory IotDevicesState.errorConnection() = ErrorConnection;
 }
 
 class IotDevicesBloc extends Bloc<IotDevicesEvent, IotDevicesState> {
@@ -47,6 +51,10 @@ class IotDevicesBloc extends Bloc<IotDevicesEvent, IotDevicesState> {
         ),
         controlDevice: (final controlData) => _controlDevice(
           controlData,
+          emit,
+        ),
+        innerIotDevicesError: (final err) => _innerIotDevicesError(
+          err,
           emit,
         ),
       ),
@@ -65,7 +73,18 @@ class IotDevicesBloc extends Bloc<IotDevicesEvent, IotDevicesState> {
           (final iotDevices) => add(
             IotDevicesEvent.innerIotDevicesUpdate(iotDevices),
           ),
+          onError: (final err) => add(
+            IotDevicesEvent.innerIotDevicesError(err as Object),
+          ),
         );
+  }
+
+  Future<void> _innerIotDevicesError(
+    final Object err,
+    final Emitter<IotDevicesState> emit,
+  ) async {
+    await _subIotDevices.cancel();
+    emit(const IotDevicesState.errorConnection());
   }
 
   Future<void> _innerIotDevicesUpdate(

@@ -18,8 +18,9 @@ class IotCommunicatorServiceImpl implements IotCommunicatorService {
   final IotChannelProvider iotChannelProvider;
   final IotAdapter iotAdapter;
 
-  final _controllerClient = StreamController<Client>();
-  final _controllerIotDevice = StreamController<IotDevicesDataWrapper>();
+  final _controllerClient = StreamController<Client>.broadcast();
+  final _controllerIotDevice =
+      StreamController<IotDevicesDataWrapper>.broadcast();
 
   late final StreamSubscription _subChannel;
 
@@ -38,6 +39,14 @@ class IotCommunicatorServiceImpl implements IotCommunicatorService {
             break;
           case Sign.unknown:
             break;
+        }
+      },
+      onError: (final err) {
+        if (_controllerClient.hasListener) {
+          _controllerClient.addError(err as Object);
+        }
+        if (_controllerIotDevice.hasListener) {
+          _controllerIotDevice.addError(err as Object);
         }
       },
     );

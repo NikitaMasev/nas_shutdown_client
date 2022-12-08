@@ -20,18 +20,21 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() start,
     required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(Object err) innerClientError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
     TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(Object err)? innerClientError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
     TResult Function(Client client)? innerClientUpdate,
+    TResult Function(Object err)? innerClientError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
     required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerClientError value) innerClientError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
     TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerClientError value)? innerClientError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
     TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerClientError value)? innerClientError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -110,6 +116,7 @@ class _$Start implements Start {
   TResult when<TResult extends Object?>({
     required TResult Function() start,
     required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(Object err) innerClientError,
   }) {
     return start();
   }
@@ -119,6 +126,7 @@ class _$Start implements Start {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
     TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(Object err)? innerClientError,
   }) {
     return start?.call();
   }
@@ -128,6 +136,7 @@ class _$Start implements Start {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
     TResult Function(Client client)? innerClientUpdate,
+    TResult Function(Object err)? innerClientError,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -141,6 +150,7 @@ class _$Start implements Start {
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
     required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerClientError value) innerClientError,
   }) {
     return start(this);
   }
@@ -150,6 +160,7 @@ class _$Start implements Start {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
     TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerClientError value)? innerClientError,
   }) {
     return start?.call(this);
   }
@@ -159,6 +170,7 @@ class _$Start implements Start {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
     TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerClientError value)? innerClientError,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -238,6 +250,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult when<TResult extends Object?>({
     required TResult Function() start,
     required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(Object err) innerClientError,
   }) {
     return innerClientUpdate(client);
   }
@@ -247,6 +260,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
     TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(Object err)? innerClientError,
   }) {
     return innerClientUpdate?.call(client);
   }
@@ -256,6 +270,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
     TResult Function(Client client)? innerClientUpdate,
+    TResult Function(Object err)? innerClientError,
     required TResult orElse(),
   }) {
     if (innerClientUpdate != null) {
@@ -269,6 +284,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult map<TResult extends Object?>({
     required TResult Function(Start value) start,
     required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerClientError value) innerClientError,
   }) {
     return innerClientUpdate(this);
   }
@@ -278,6 +294,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Start value)? start,
     TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerClientError value)? innerClientError,
   }) {
     return innerClientUpdate?.call(this);
   }
@@ -287,6 +304,7 @@ class _$InnerClientUpdate implements InnerClientUpdate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Start value)? start,
     TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerClientError value)? innerClientError,
     required TResult orElse(),
   }) {
     if (innerClientUpdate != null) {
@@ -306,13 +324,150 @@ abstract class InnerClientUpdate implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$InnerClientErrorCopyWith<$Res> {
+  factory _$$InnerClientErrorCopyWith(
+          _$InnerClientError value, $Res Function(_$InnerClientError) then) =
+      __$$InnerClientErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object err});
+}
+
+/// @nodoc
+class __$$InnerClientErrorCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$InnerClientError>
+    implements _$$InnerClientErrorCopyWith<$Res> {
+  __$$InnerClientErrorCopyWithImpl(
+      _$InnerClientError _value, $Res Function(_$InnerClientError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? err = null,
+  }) {
+    return _then(_$InnerClientError(
+      null == err ? _value.err : err,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InnerClientError implements InnerClientError {
+  const _$InnerClientError(this.err);
+
+  @override
+  final Object err;
+
+  @override
+  String toString() {
+    return 'AuthEvent.innerClientError(err: $err)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InnerClientError &&
+            const DeepCollectionEquality().equals(other.err, err));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(err));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InnerClientErrorCopyWith<_$InnerClientError> get copyWith =>
+      __$$InnerClientErrorCopyWithImpl<_$InnerClientError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(Client client) innerClientUpdate,
+    required TResult Function(Object err) innerClientError,
+  }) {
+    return innerClientError(err);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(Client client)? innerClientUpdate,
+    TResult? Function(Object err)? innerClientError,
+  }) {
+    return innerClientError?.call(err);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(Client client)? innerClientUpdate,
+    TResult Function(Object err)? innerClientError,
+    required TResult orElse(),
+  }) {
+    if (innerClientError != null) {
+      return innerClientError(err);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Start value) start,
+    required TResult Function(InnerClientUpdate value) innerClientUpdate,
+    required TResult Function(InnerClientError value) innerClientError,
+  }) {
+    return innerClientError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Start value)? start,
+    TResult? Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult? Function(InnerClientError value)? innerClientError,
+  }) {
+    return innerClientError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Start value)? start,
+    TResult Function(InnerClientUpdate value)? innerClientUpdate,
+    TResult Function(InnerClientError value)? innerClientError,
+    required TResult orElse(),
+  }) {
+    if (innerClientError != null) {
+      return innerClientError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InnerClientError implements AuthEvent {
+  const factory InnerClientError(final Object err) = _$InnerClientError;
+
+  Object get err;
+  @JsonKey(ignore: true)
+  _$$InnerClientErrorCopyWith<_$InnerClientError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -320,7 +475,7 @@ mixin _$AuthState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -328,7 +483,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -337,7 +492,7 @@ mixin _$AuthState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -345,7 +500,7 @@ mixin _$AuthState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -353,7 +508,7 @@ mixin _$AuthState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -415,7 +570,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return initial();
   }
@@ -426,7 +581,7 @@ class _$Initial implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return initial?.call();
   }
@@ -437,7 +592,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -452,7 +607,7 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return initial(this);
   }
@@ -463,7 +618,7 @@ class _$Initial implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return initial?.call(this);
   }
@@ -474,7 +629,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -527,7 +682,7 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return loading();
   }
@@ -538,7 +693,7 @@ class _$Loading implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return loading?.call();
   }
@@ -549,7 +704,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -564,7 +719,7 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return loading(this);
   }
@@ -575,7 +730,7 @@ class _$Loading implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return loading?.call(this);
   }
@@ -586,7 +741,7 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -639,7 +794,7 @@ class _$Success implements Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
     return success();
   }
@@ -650,7 +805,7 @@ class _$Success implements Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
     return success?.call();
   }
@@ -661,7 +816,7 @@ class _$Success implements Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -676,7 +831,7 @@ class _$Success implements Success {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
     return success(this);
   }
@@ -687,7 +842,7 @@ class _$Success implements Success {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
     return success?.call(this);
   }
@@ -698,7 +853,7 @@ class _$Success implements Success {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -713,62 +868,39 @@ abstract class Success implements AuthState {
 }
 
 /// @nodoc
-abstract class _$$ErrorCopyWith<$Res> {
-  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
-      __$$ErrorCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String error});
+abstract class _$$ErrorConnectionCopyWith<$Res> {
+  factory _$$ErrorConnectionCopyWith(
+          _$ErrorConnection value, $Res Function(_$ErrorConnection) then) =
+      __$$ErrorConnectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$Error>
-    implements _$$ErrorCopyWith<$Res> {
-  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+class __$$ErrorConnectionCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ErrorConnection>
+    implements _$$ErrorConnectionCopyWith<$Res> {
+  __$$ErrorConnectionCopyWithImpl(
+      _$ErrorConnection _value, $Res Function(_$ErrorConnection) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$Error(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$Error implements Error {
-  const _$Error(this.error);
-
-  @override
-  final String error;
+class _$ErrorConnection implements ErrorConnection {
+  const _$ErrorConnection();
 
   @override
   String toString() {
-    return 'AuthState.error(error: $error)';
+    return 'AuthState.errorConnection()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Error &&
-            (identical(other.error, error) || other.error == error));
+        (other.runtimeType == runtimeType && other is _$ErrorConnection);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ErrorCopyWith<_$Error> get copyWith =>
-      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -776,9 +908,9 @@ class _$Error implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() errorConnection,
   }) {
-    return error(this.error);
+    return errorConnection();
   }
 
   @override
@@ -787,9 +919,9 @@ class _$Error implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String error)? error,
+    TResult? Function()? errorConnection,
   }) {
-    return error?.call(this.error);
+    return errorConnection?.call();
   }
 
   @override
@@ -798,11 +930,11 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? errorConnection,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this.error);
+    if (errorConnection != null) {
+      return errorConnection();
     }
     return orElse();
   }
@@ -813,9 +945,9 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Error value) error,
+    required TResult Function(ErrorConnection value) errorConnection,
   }) {
-    return error(this);
+    return errorConnection(this);
   }
 
   @override
@@ -824,9 +956,9 @@ class _$Error implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Error value)? error,
+    TResult? Function(ErrorConnection value)? errorConnection,
   }) {
-    return error?.call(this);
+    return errorConnection?.call(this);
   }
 
   @override
@@ -835,20 +967,16 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Error value)? error,
+    TResult Function(ErrorConnection value)? errorConnection,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorConnection != null) {
+      return errorConnection(this);
     }
     return orElse();
   }
 }
 
-abstract class Error implements AuthState {
-  const factory Error(final String error) = _$Error;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
+abstract class ErrorConnection implements AuthState {
+  const factory ErrorConnection() = _$ErrorConnection;
 }
