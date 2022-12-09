@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:nas_shutdown_client/data/sources/shared_persistent.dart';
-import 'package:nas_shutdown_client/models/client.dart';
+import 'package:iot_models/iot_models.dart';
 
 const _user = 'user';
 

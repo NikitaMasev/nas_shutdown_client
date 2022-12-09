@@ -1,9 +1,7 @@
 import 'dart:convert';
 
 import 'package:nas_shutdown_client/adapters/iot_adapter.dart';
-import 'package:nas_shutdown_client/models/client.dart';
-import 'package:nas_shutdown_client/models/communicator_sign.dart';
-import 'package:nas_shutdown_client/models/iot_devices_data_wrapper.dart';
+import 'package:iot_models/iot_models.dart';
 
 class IotAdapterImpl implements IotAdapter {
   const IotAdapterImpl();
@@ -27,14 +25,5 @@ class IotAdapterImpl implements IotAdapter {
   }
 
   @override
-  Sign partiallyDecodeSign(final String data) {
-    if (!data.contains('sign')) {
-      return Sign.unknown;
-    }
-    final json = jsonDecode(data);
-    final communicatorSign = CommunicatorSign.fromJson(
-      json as Map<String, dynamic>,
-    );
-    return communicatorSign.sign;
-  }
+  Sign decodeSign(final String data) => partiallyDecodeSign(data);
 }

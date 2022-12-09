@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:nas_shutdown_client/models/client.dart';
-import 'package:nas_shutdown_client/models/control_data.dart';
-import 'package:nas_shutdown_client/models/iot_devices_data_wrapper.dart';
+import 'package:iot_models/iot_models.dart';
 import 'package:nas_shutdown_client/services/iot_communicator/iot_communicator_service.dart';
 
 part 'iot_devices_bloc.freezed.dart';

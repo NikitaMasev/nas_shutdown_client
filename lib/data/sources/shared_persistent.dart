@@ -1,4 +1,4 @@
-import 'package:nas_shutdown_client/models/client.dart';
+import 'package:iot_models/iot_models.dart';
 
 abstract class SharedPersistent {
   Future<Client?> getSavedClient();

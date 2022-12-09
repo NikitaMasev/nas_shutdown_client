@@ -1,6 +1,6 @@
+import 'package:iot_models/iot_models.dart';
 import 'package:nas_shutdown_client/data/repositories/user_repository.dart';
 import 'package:nas_shutdown_client/data/sources/shared_persistent.dart';
-import 'package:nas_shutdown_client/models/client.dart';
 
 class UserRepositoryImpl implements UserRepository {
   UserRepositoryImpl(this.sharedPersistent);

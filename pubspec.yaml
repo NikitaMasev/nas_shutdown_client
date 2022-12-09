@@ -7,10 +7,8 @@ environment:
   sdk: '>=2.17.5 <3.0.0'
 
 dependencies:
-  encrypt: ^5.0.1
+  #Network
   dartssh2: ^2.7.3
-  rxdart: ^0.27.5
-  json_annotation: ^4.7.0
   web_socket_channel: ^2.1.0
 
   #Architecture
@@ -18,6 +16,16 @@ dependencies:
 
   #Data
   freezed_annotation:  ^2.2.0
+  json_annotation: ^4.7.0
+
+  #Tools
+  encrypt: ^5.0.1
+  rxdart: ^0.27.5
+
+  iot_models:
+    git:
+      url: https://github.com/NikitaMasev/iot_models.git
+      ref: main
 
 dev_dependencies:
   freezed: ^2.3.0

@@ -1,9 +1,8 @@
 import 'dart:async';
 
+import 'package:iot_models/iot_models.dart';
 import 'package:nas_shutdown_client/domain/iot_devices/iot_devices_bloc.dart';
 import 'package:nas_shutdown_client/internal/runnable.dart';
-import 'package:nas_shutdown_client/models/type_device.dart';
-import 'package:nas_shutdown_client/models/ups_data.dart';
 import 'package:nas_shutdown_client/services/ssh/ssh_shutdowner.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -40,6 +39,7 @@ class NasShutDownConsumer implements Runnable {
             update: (final devices) => devices,
           )!,
         )
+        .whereType<IotDevicesDataWrapper>()
         .flatMap((final devices) => Stream.fromIterable(devices.devices))
         .where((final device) => device.typeDevice == TypeDevice.ups)
         .where((final device) => device.data != null)
@@ -65,11 +65,11 @@ class NasShutDownConsumer implements Runnable {
     _subBlocErrorState = iotDevicesBloc.stream
         .where((final state) => state is ErrorConnection)
         .listen(
-          (final state) {
-            _subBlocUpdateState.cancel();
-            _subBlocErrorState.cancel();
-          },
-        );
+      (final state) {
+        _subBlocUpdateState.cancel();
+        _subBlocErrorState.cancel();
+      },
+    );
   }
 
   void _runTimerDelayShutdown() =>
