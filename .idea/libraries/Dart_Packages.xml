@@ -233,10 +233,17 @@
             </list>
           </value>
         </entry>
+        <entry key="iot_internal">
+          <value>
+            <list>
+              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_internal-526e99a47644632e3025597345351702e7738230//lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="iot_models">
           <value>
             <list>
-              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-ce95197c54c77605eec28b36082414f15d0ef6e1//lib" />
+              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-6464301408491b15c6df948c5bba968c625bf567//lib" />
             </list>
           </value>
         </entry>
@@ -460,7 +467,8 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-ce95197c54c77605eec28b36082414f15d0ef6e1//lib" />
+      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_internal-526e99a47644632e3025597345351702e7738230//lib" />
+      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-6464301408491b15c6df948c5bba968c625bf567//lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/_fe_analyzer_shared-51.0.0/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/analyzer-5.3.1/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/args-2.3.1/lib" />

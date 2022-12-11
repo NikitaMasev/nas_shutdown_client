@@ -1,4 +1,4 @@
-import 'package:nas_shutdown_client/services/crypto/crypto.dart';
+import 'package:iot_internal/iot_internal.dart';
 import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.dart';
 
 class IotServiceCryptoConnector implements IotChannelProvider {

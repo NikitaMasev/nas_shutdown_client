@@ -156,7 +156,7 @@ packages:
     source: hosted
     version: "2.7.3"
   encrypt:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: encrypt
       url: "https://pub.dartlang.org"
@@ -232,12 +232,21 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  iot_internal:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: "526e99a47644632e3025597345351702e7738230"
+      url: "https://github.com/NikitaMasev/iot_internal.git"
+    source: git
+    version: "1.0.0"
   iot_models:
     dependency: "direct main"
     description:
       path: "."
       ref: main
-      resolved-ref: ce95197c54c77605eec28b36082414f15d0ef6e1
+      resolved-ref: "6464301408491b15c6df948c5bba968c625bf567"
       url: "https://github.com/NikitaMasev/iot_models.git"
     source: git
     version: "1.0.0"

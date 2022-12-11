@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nas_shutdown_client/adapters/iot_adapter.dart';
+import 'package:iot_internal/iot_internal.dart';
 import 'package:iot_models/iot_models.dart';
 import 'package:nas_shutdown_client/services/iot_communicator/iot_communicator_service.dart';
 import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.dart';
@@ -8,13 +8,17 @@ import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.
 class IotCommunicatorServiceImpl implements IotCommunicatorService {
   IotCommunicatorServiceImpl({
     required final this.iotChannelProvider,
-    required final this.iotAdapter,
+    required final this.clientCodec,
+    required final this.iotDevicesCodec,
+    required final this.communicatorSignDecoder,
   }) {
     _runSubscription();
   }
 
   final IotChannelProvider iotChannelProvider;
-  final IotAdapter iotAdapter;
+  final ClientCodec clientCodec;
+  final IotDevicesCodec iotDevicesCodec;
+  final CommunicatorSignDecoder communicatorSignDecoder;
 
   final _controllerClient = StreamController<Client>.broadcast();
   final _controllerIotDevice =
@@ -25,14 +29,14 @@ class IotCommunicatorServiceImpl implements IotCommunicatorService {
   void _runSubscription() {
     _subChannel = iotChannelProvider.watchRawChannel().listen(
       (final rawData) {
-        final signModel = iotAdapter.decodeSign(rawData);
+        final signModel = communicatorSignDecoder.decode(rawData);
         switch (signModel) {
           case Sign.client:
-            final client = iotAdapter.decodeClient(rawData);
+            final client = clientCodec.decode(rawData);
             _controllerClient.add(client);
             break;
           case Sign.iotDevices:
-            final iotDevices = iotAdapter.decodeIotDevices(rawData);
+            final iotDevices = iotDevicesCodec.decode(rawData);
             _controllerIotDevice.add(iotDevices);
             break;
           case Sign.unknown:
@@ -56,7 +60,7 @@ class IotCommunicatorServiceImpl implements IotCommunicatorService {
 
   @override
   void sendClient(final Client client) {
-    final encodedClient = iotAdapter.encodeClient(client);
+    final encodedClient = clientCodec.encode(client);
     iotChannelProvider.sinkRawData(encodedClient);
   }
 

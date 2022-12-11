@@ -1,4 +1,5 @@
-import 'package:nas_shutdown_client/adapters/iot_adapter_impl.dart';
+import 'package:iot_internal/iot_internal.dart';
+import 'package:iot_models/iot_models.dart';
 import 'package:nas_shutdown_client/data/repositories/user_repository.dart';
 import 'package:nas_shutdown_client/data/repositories/user_repository_impl.dart';
 import 'package:nas_shutdown_client/data/sources/shared_persistent.dart';
@@ -12,16 +13,17 @@ import 'package:nas_shutdown_client/services/iot_connector/iot_service_crypto_co
 
 Future<IotCommunicatorService> configCommunicator() async {
   final iotChannelProvider = await _configChannelProvider();
-  const iotAdapter = IotAdapterImpl();
+
   return IotCommunicatorServiceImpl(
     iotChannelProvider: iotChannelProvider,
-    iotAdapter: iotAdapter,
+    communicatorSignDecoder: const CommunicatorSignDecoderImpl(),
+    iotDevicesCodec: const IotDevicesCodecImpl(),
+    clientCodec: const ClientCodecImpl(),
   );
 }
 
-Future<SharedPersistent> _configSharedPersistent() async {
-  return SharedPersistentImpl();
-}
+Future<SharedPersistent> _configSharedPersistent() async =>
+    SharedPersistentImpl();
 
 Future<UserRepository> configUserRepo() async {
   final sharedPersistent = await _configSharedPersistent();

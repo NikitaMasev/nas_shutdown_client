@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:nas_shutdown_client/services/crypto/crypto_impl.dart';
+import 'package:iot_internal/iot_internal.dart';
 
 final portNas = int.parse(Platform.environment['PORT_NAS'] ?? '5080');
 final portClients = int.parse(Platform.environment['PORT_CLIENTS'] ?? '5090');

@@ -1,4 +1,4 @@
-import 'package:nas_shutdown_client/internal/runnable_async.dart';
+import 'package:iot_internal/iot_internal.dart';
 
 abstract class SshShutdowner implements RunnableAsync {
   Future<void> execute();

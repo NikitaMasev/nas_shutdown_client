@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:iot_internal/iot_internal.dart';
 import 'package:nas_shutdown_client/di/consumers.dart';
 import 'package:nas_shutdown_client/di/domains.dart';
 import 'package:nas_shutdown_client/di/sources.dart';
 import 'package:nas_shutdown_client/domain/auth/auth_bloc.dart';
-import 'package:nas_shutdown_client/internal/app_bloc_observer.dart';
 
 Future<void> main() async {
   Bloc.observer = AppBlocObserver();

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nas_shutdown_client/internal/runnable.dart';
+import 'package:iot_internal/iot_internal.dart';
 import 'package:nas_shutdown_client/services/iot_connector/iot_channel_provider.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
