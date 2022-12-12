@@ -242,7 +242,7 @@ packages:
     source: git
     version: "1.0.0"
   iot_models:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "."
       ref: main

@@ -21,11 +21,6 @@ dependencies:
   #Tools
   rxdart: ^0.27.5
 
-  iot_models:
-    git:
-      url: https://github.com/NikitaMasev/iot_models.git
-      ref: main
-
   iot_internal:
     git:
       url: https://github.com/NikitaMasev/iot_internal.git
