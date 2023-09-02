@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:iot_client_starter/iot_client_starter.dart';
 import 'package:iot_internal/iot_internal.dart';
 import 'package:iot_models/iot_models.dart';
-import 'package:nas_shutdown_client/domain/iot_devices/iot_devices_bloc.dart';
 import 'package:nas_shutdown_client/services/ssh/ssh_shutdowner.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -12,7 +12,7 @@ class NasShutDownConsumer implements Runnable {
     required final this.sshShutdowner,
     final this.bufferMeasureData = 10,
     final this.voltageShutdown = 9.1,
-    final this.durationDelayShutdown = const Duration(hours: 1),
+    final this.durationDelayShutdown = const Duration(minutes: 10),
   });
 
   final IotDevicesBloc iotDevicesBloc;
