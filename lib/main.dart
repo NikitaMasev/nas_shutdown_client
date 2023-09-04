@@ -6,16 +6,21 @@ import 'package:iot_internal/iot_internal.dart';
 import 'package:nas_shutdown_client/di/config_consumers.dart';
 import 'package:nas_shutdown_client/di/static_dependencies.dart';
 
+
 Future<void> main() async {
   Bloc.observer = AppBlocObserver();
 
-  final channelProvider = await configChannelProvider(
+  final (channelProvider, channelStateWatcher) = await configChannelProvider(
     ipClients: ipClients,
     portClients: portClients.toString(),
     cryptoClients: cryptoClients,
   );
   final iotCommunicatorService = await configCommunicator(channelProvider);
-  final authBloc = await configAuthBloc(iotCommunicatorService, nameDevice);
+  final authBloc = await configAuthBloc(
+    iotCommunicatorService: iotCommunicatorService,
+    channelStateWatcher: channelStateWatcher,
+    nameDevice: nameDevice,
+  );
 
   authBloc.stream.listen(
     (final state) => state.whenOrNull(
@@ -23,9 +28,6 @@ Future<void> main() async {
         configNasShutdownConsumer(iotCommunicatorService).then<void>(
           (final shutDowner) => shutDowner.run(),
         );
-      },
-      errorConnection: () {
-        authBloc.add(const AuthEvent.start());
       },
     ),
   );

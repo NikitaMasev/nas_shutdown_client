@@ -8,11 +8,11 @@ import 'package:rxdart/rxdart.dart';
 
 class NasShutDownConsumer implements Runnable {
   NasShutDownConsumer({
-    required final this.iotDevicesBloc,
-    required final this.sshShutdowner,
-    final this.bufferMeasureData = 10,
-    final this.voltageShutdown = 9.1,
-    final this.durationDelayShutdown = const Duration(minutes: 10),
+    required this.iotDevicesBloc,
+    required this.sshShutdowner,
+    this.bufferMeasureData = 10,
+    this.voltageShutdown = 9.1,
+    this.durationDelayShutdown = const Duration(minutes: 10),
   });
 
   final IotDevicesBloc iotDevicesBloc;
