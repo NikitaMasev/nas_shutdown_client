@@ -1,5 +1,5 @@
 name: nas_shutdown_client
-description: A sample command-line application.
+description: A iot client for tracking battery voltage of nas.It allow to shutdown nas remotely.
 version: 1.1.1
 publish_to: none
 
@@ -8,10 +8,10 @@ environment:
 
 dependencies:
   #Network
-  dartssh2: ^2.7.3
+  dartssh2: ^2.8.2
 
   #Tools
-  rxdart: ^0.27.5
+  rxdart: ^0.27.7
 
   iot_client_starter:
     git:
@@ -19,7 +19,4 @@ dependencies:
       ref: main
 
 dev_dependencies:
-  freezed: ^2.3.0
-  lints: ^2.0.0
-  json_serializable: ^6.5.4
-  build_runner: ^2.3.2
+  lints: ^2.1.1
