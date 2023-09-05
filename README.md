@@ -1,2 +1,1 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+## A iot client for tracking battery voltage of nas.It allow to shutdown nas remotely.
