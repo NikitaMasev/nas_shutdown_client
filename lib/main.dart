@@ -8,13 +8,14 @@ import 'package:nas_shutdown_client/di/static_dependencies.dart';
 
 
 Future<void> main() async {
-  Bloc.observer = AppBlocObserver();
+  //Bloc.observer = AppBlocObserver();
 
-  final (channelProvider, channelStateWatcher) = await configChannelProvider(
+  final (channelProvider, channelStateWatcher, runner) = await configChannelProvider(
     ipClients: ipClients,
     portClients: portClients.toString(),
     cryptoClients: cryptoClients,
   );
+
   final iotCommunicatorService = await configCommunicator(channelProvider);
   final authBloc = await configAuthBloc(
     iotCommunicatorService: iotCommunicatorService,
@@ -32,4 +33,5 @@ Future<void> main() async {
     ),
   );
   authBloc.add(const AuthEvent.start());
+  runner.run();
 }

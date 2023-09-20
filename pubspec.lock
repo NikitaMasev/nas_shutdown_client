@@ -69,10 +69,10 @@ packages:
     dependency: transitive
     description:
       name: encrypt
-      sha256: "4fd4e4fdc21b9d7d4141823e1e6515cd94e7b8d84749504c232999fba25d9bbb"
+      sha256: "62d9aa4670cc2a8798bab89b39fc71b6dfbacf615de6cf5001fb39f7e4a996a2"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.1"
+    version: "5.0.3"
   freezed_annotation:
     dependency: transitive
     description:
@@ -86,16 +86,16 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "9ce1ceb63377d6cc1532a8d8d3984317bd698900"
+      resolved-ref: "2ed1524d0a8f31c344eeb0ac69a0c8db4abce430"
       url: "https://github.com/NikitaMasev/iot_client_starter.git"
     source: git
-    version: "1.1.1"
+    version: "1.1.8"
   iot_internal:
     dependency: transitive
     description:
       path: "."
       ref: main
-      resolved-ref: cb011b68b6e584e12e6ee7babf6e09b204ab0be4
+      resolved-ref: "04bca22b8ab00b576b2c1d273e7ce86452e0384d"
       url: "https://github.com/NikitaMasev/iot_internal.git"
     source: git
     version: "1.1.1"
@@ -104,10 +104,10 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "837a53c4e5134a40936d75d90d4240a85e75bb12"
+      resolved-ref: e0f8508a93e0a120ca46d810211e92acfe096da4
       url: "https://github.com/NikitaMasev/iot_models.git"
     source: git
-    version: "1.1.1"
+    version: "1.1.8"
   js:
     dependency: transitive
     description:
@@ -136,10 +136,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
+      sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.1"
+    version: "1.10.0"
   pinenacl:
     dependency: transitive
     description:

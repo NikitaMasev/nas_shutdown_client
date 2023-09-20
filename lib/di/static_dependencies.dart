@@ -11,5 +11,6 @@ final passwordNas = Platform.environment['PASSWORD_NAS'] ?? 'password';
 final _keyClients = Platform.environment['KEY_CLIENTS'] ?? '0123456789561011';
 final _ivClients = Platform.environment['IV_CLIENTS'] ?? '0123456789561011';
 final nameDevice = Platform.environment['NAME_DEVICE'] ?? 'nas_shutdown';
+final targetId = int.parse(Platform.environment['TARGET_ID'] ?? '131');
 
 final cryptoClients = CryptoImpl(key: _keyClients, iv: _ivClients);

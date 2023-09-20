@@ -10,6 +10,7 @@ class NasShutDownConsumer implements Runnable {
   NasShutDownConsumer({
     required this.iotDevicesBloc,
     required this.sshShutdowner,
+    required this.targetId,
     this.bufferMeasureData = 10,
     this.voltageShutdown = 9.1,
     this.durationDelayShutdown = const Duration(minutes: 10),
@@ -20,6 +21,7 @@ class NasShutDownConsumer implements Runnable {
   final int bufferMeasureData;
   final double voltageShutdown;
   final Duration durationDelayShutdown;
+  final int targetId;
 
   late final StreamSubscription _subBlocUpdateState;
   late final StreamSubscription _subBlocErrorState;
@@ -43,6 +45,7 @@ class NasShutDownConsumer implements Runnable {
         .flatMap((final devices) => Stream.fromIterable(devices.devices))
         .where((final device) => device.typeDevice == TypeDevice.ups)
         .where((final device) => device.data != null)
+        .where((final device) => device.id == targetId)
         .map((final device) => device.data as UpsData)
         .map((final upsData) => upsData.voltageDC)
         .bufferCount(bufferMeasureData)
@@ -52,6 +55,7 @@ class NasShutDownConsumer implements Runnable {
               voltages.length,
         )
         .listen((final voltageAvg) {
+          print(voltageAvg);
       if (voltageAvg <= voltageShutdown && _timerDelayShutdown == null) {
         _runTimerDelayShutdown();
         print('LOW voltage $voltageAvg');

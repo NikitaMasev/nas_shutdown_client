@@ -11,6 +11,8 @@ ENV KEY_CLIENTS="0123456789561011"
 ENV IV_CLIENTS="0123456789561011"
 ENV NAME_DEVICE="nas_shutdown"
 
+ENV TARGET_ID=""
+
 RUN apt-get -y update && apt-get -y upgrade && apt-get install -y sqlite3 libsqlite3-dev
 COPY . /nas_shutdown_client
 WORKDIR /nas_shutdown_client
