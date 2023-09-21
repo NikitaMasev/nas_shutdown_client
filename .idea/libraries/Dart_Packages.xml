@@ -75,7 +75,7 @@
         <entry key="iot_client_starter">
           <value>
             <list>
-              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_client_starter-2ed1524d0a8f31c344eeb0ac69a0c8db4abce430//lib" />
+              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_client_starter-60e325074e84d7550a538ba26603d1592d23c875//lib" />
             </list>
           </value>
         </entry>
@@ -89,7 +89,7 @@
         <entry key="iot_models">
           <value>
             <list>
-              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-e0f8508a93e0a120ca46d810211e92acfe096da4//lib" />
+              <option value="$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-ecf01b1379a344af0069d3a50a4b2b54d56afeeb//lib" />
             </list>
           </value>
         </entry>
@@ -159,9 +159,9 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_client_starter-2ed1524d0a8f31c344eeb0ac69a0c8db4abce430//lib" />
+      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_client_starter-60e325074e84d7550a538ba26603d1592d23c875//lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_internal-04bca22b8ab00b576b2c1d273e7ce86452e0384d//lib" />
-      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-e0f8508a93e0a120ca46d810211e92acfe096da4//lib" />
+      <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/git/iot_models-ecf01b1379a344af0069d3a50a4b2b54d56afeeb//lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.4.2/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/asn1lib-1.5.0/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/bloc-8.1.2/lib" />

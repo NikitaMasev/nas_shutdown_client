@@ -55,7 +55,6 @@ class NasShutDownConsumer implements Runnable {
               voltages.length,
         )
         .listen((final voltageAvg) {
-          print(voltageAvg);
       if (voltageAvg <= voltageShutdown && _timerDelayShutdown == null) {
         _runTimerDelayShutdown();
         print('LOW voltage $voltageAvg');

@@ -6,9 +6,8 @@ import 'package:iot_internal/iot_internal.dart';
 import 'package:nas_shutdown_client/di/config_consumers.dart';
 import 'package:nas_shutdown_client/di/static_dependencies.dart';
 
-
 Future<void> main() async {
-  //Bloc.observer = AppBlocObserver();
+  Bloc.observer = AppBlocObserver();
 
   final (channelProvider, channelStateWatcher, runner) = await configChannelProvider(
     ipClients: ipClients,
