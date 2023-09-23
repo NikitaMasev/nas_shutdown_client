@@ -7,30 +7,39 @@ import 'package:nas_shutdown_client/di/config_consumers.dart';
 import 'package:nas_shutdown_client/di/static_dependencies.dart';
 
 Future<void> main() async {
-  Bloc.observer = AppBlocObserver();
+  await runZonedGuarded(
+    () async {
+      Bloc.observer = AppBlocObserver();
 
-  final (channelProvider, channelStateWatcher, runner) = await configChannelProvider(
-    ipClients: ipClients,
-    portClients: portClients.toString(),
-    cryptoClients: cryptoClients,
-  );
+      final (channelProvider, channelStateWatcher, runner) =
+          await configChannelProvider(
+        ipClients: ipClients,
+        portClients: portClients.toString(),
+        cryptoClients: cryptoClients,
+      );
 
-  final iotCommunicatorService = await configCommunicator(channelProvider);
-  final authBloc = await configAuthBloc(
-    iotCommunicatorService: iotCommunicatorService,
-    channelStateWatcher: channelStateWatcher,
-    nameDevice: nameDevice,
-  );
+      final iotCommunicatorService = await configCommunicator(channelProvider);
+      final authBloc = await configAuthBloc(
+        iotCommunicatorService: iotCommunicatorService,
+        channelStateWatcher: channelStateWatcher,
+        nameDevice: nameDevice,
+      );
 
-  authBloc.stream.listen(
-    (final state) => state.whenOrNull(
-      success: () {
-        configNasShutdownConsumer(iotCommunicatorService).then<void>(
-          (final shutDowner) => shutDowner.run(),
-        );
-      },
+      authBloc.stream.listen(
+        (final state) => state.whenOrNull(
+          success: () {
+            configNasShutdownConsumer(iotCommunicatorService).then<void>(
+              (final shutDowner) => shutDowner.run(),
+            );
+          },
+        ),
+      );
+      authBloc.add(const AuthEvent.start());
+      runner.run();
+      return null;
+    },
+    (final error, final stack) => print(
+      '${error.toString()} Stacktrace: ${stack.toString()}',
     ),
   );
-  authBloc.add(const AuthEvent.start());
-  runner.run();
 }
