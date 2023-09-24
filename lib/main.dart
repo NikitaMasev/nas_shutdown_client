@@ -36,7 +36,6 @@ Future<void> main() async {
       );
       authBloc.add(const AuthEvent.start());
       runner.run();
-      return null;
     },
     (final error, final stack) => print(
       '${error.toString()} Stacktrace: ${stack.toString()}',
