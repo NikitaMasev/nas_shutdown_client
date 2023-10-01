@@ -1,6 +1,6 @@
 name: nas_shutdown_client
 description: A iot client for tracking battery voltage of nas.It allow to shutdown nas remotely.
-version: 1.1.4
+version: 1.1.5
 publish_to: none
 
 environment:
@@ -12,6 +12,9 @@ dependencies:
 
   #Tools
   rxdart: ^0.27.7
+
+  #Monitoring
+  sentry: ^7.10.1
 
   iot_client_starter:
     git:
